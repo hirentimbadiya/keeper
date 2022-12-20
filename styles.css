@@ -9,11 +9,16 @@ html {
 body {
   background: #eee;
   padding: 0 1rem;
+  background-color: #910000;
+  background-color: #505431;
+  background-image: url("https://www.transparenttextures.com/patterns/checkered-pattern.png");
+  overflow: hidden;
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 header {
   background-color: #f5ba13;
-  background-image: linear-gradient(#db8446 , #f5ba13, #f5ba13 ,#db8446 );
+  background-image: linear-gradient(#db8446, #f5ba13, #f5ba13, #db8446);
   margin: auto -16px;
   padding: 1rem 2rem;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
@@ -38,11 +43,11 @@ footer p {
   color: #ccc;
 }
 
-.bulbimage{
+.bulbimage {
   float: left;
   align-items: center;
 }
-img{
+img {
   float: right;
   width: 60%;
   height: 60%;
@@ -67,30 +72,22 @@ img{
   word-wrap: break-word;
 }
 .note button {
-  font-weight: 600;
-  background-color:darkslategrey;
   position: relative;
   float: right;
   margin-right: 0.625rem;
-  color: yellow;
+  color: black;
+  background-color: white;
   border: none;
-  width: 55px;
-  height: 36px;
-  border: 1.5px solid black;
+  width: 32px;
+  height: 32px;
   -webkit-border-radius: 20;
   -moz-border-radius: 20;
   border-radius: 20px;
   cursor: pointer;
   outline: none;
 }
-.note button:hover{
-  width: 60px;
-  background: #993b09;
-  background-image: -webkit-linear-gradient(top, #993b09, #2d6b39);
-  background-image: -moz-linear-gradient(top, #993b09, #2d6b39);
-  background-image: -ms-linear-gradient(top, #993b09, #2d6b39);
-  background-image: -o-linear-gradient(top, #993b09, #2d6b39);
-  background-image: linear-gradient(to bottom, #993b09, #2d6b39);
+.note button:hover {
+  color: red;
 }
 form {
   position: relative;
@@ -102,25 +99,31 @@ form {
   resize: none;
 }
 
-form input,
-form textarea {
+form.create-note {
+  position: relative;
+  width: 480px;
+  margin: 30px auto 20px auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px rgb(138, 137, 137);
+}
+form.create-note input,
+form.create-note textarea {
   width: 100%;
   border: none;
   padding: 4px;
   outline: none;
-  font-size: 1.2rem;
+  font-size: 1.2em;
   font-family: inherit;
   resize: none;
 }
-
-form button {
-  font-family: cursive;
+form.create-note button {
   position: absolute;
   right: 18px;
   bottom: -18px;
-  background-color: gold;
+  background: #f5ba13;
   color: black;
-  font-weight: 650;
   border: none;
   border-radius: 50%;
   width: 36px;
@@ -130,13 +133,3 @@ form button {
   outline: none;
 }
 
-form button:hover{
-  color: white;
-  width: 40px;
-  background: #993b09;
-  background-image: -webkit-linear-gradient(top, #993b09, #2d6b39);
-  background-image: -moz-linear-gradient(top, #993b09, #2d6b39);
-  background-image: -ms-linear-gradient(top, #993b09, #2d6b39);
-  background-image: -o-linear-gradient(top, #993b09, #2d6b39);
-  background-image: linear-gradient(to bottom, #993b09, #2d6b39);
-}
