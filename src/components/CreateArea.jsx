@@ -49,7 +49,7 @@ function CreateArea(props) {
         <input
           onChange={handleChange}
           name="title"
-          placeholder="Title"
+          placeholder="Title here"
           value={note.title}
           onKeyDown={submitViaEnter}
         />
