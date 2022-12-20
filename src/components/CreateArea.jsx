@@ -1,6 +1,10 @@
 import React, { useState } from "react";
-
+import AddIcon from "@mui/icons-material/Add";
+import Fab from "@mui/material/Fab";
+import Zoom from "@mui/material/Zoom";
 function CreateArea(props) {
+  const [isExp, setExp] = useState(false);
+
   // for tracking the text entered by user
   const [note, setNote] = useState({
     title: "",
@@ -42,25 +46,36 @@ function CreateArea(props) {
       e.preventDefault();
     }
   };
+
+  const expand = () => {
+    setExp(true);
+  };
   return (
     <div>
-      <form>
-        <input
-          onChange={handleChange}
-          name="title"
-          placeholder="Title Here"
-          value={note.title}
-          onKeyDown={submitViaEnter}
-        />
+      <form className="create-note">
+        {isExp && (
+          <input
+            onChange={handleChange}
+            name="title"
+            placeholder="Title Here"
+            value={note.title}
+            onKeyDown={submitViaEnter}
+          />
+        )}
         <textarea
+          onClick={expand}
           onChange={handleChange}
           name="content"
           placeholder="Write a note here..."
-          rows="3"
+          rows={isExp ? 3 : 1}
           value={note.content}
           onKeyDown={submitViaEnter}
         />
-        <button onClick={submitNote}>Add</button>
+        <Zoom in={isExp}>
+          <Fab onClick={submitNote}>
+            <AddIcon />
+          </Fab>
+        </Zoom>
       </form>
     </div>
   );
