@@ -56,7 +56,7 @@ function CreateArea(props) {
         <textarea
           onChange={handleChange}
           name="content"
-          placeholder="Take a note..."
+          placeholder="Write a note here..."
           rows="3"
           value={note.content}
           onKeyDown={submitViaEnter}
