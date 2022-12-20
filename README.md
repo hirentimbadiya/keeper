@@ -1,3 +1,8 @@
+About
+in this repository i have created a note keeping app , 
+in which you can add your notes and also delete your notes , 
+i have used React.js to make this project.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
