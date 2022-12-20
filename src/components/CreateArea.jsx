@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function CreateArea(props) {
- // for tracking the text entered by user
+  // for tracking the text entered by user
   const [note, setNote] = useState({
     title: "",
     content: "",
@@ -18,7 +18,6 @@ function CreateArea(props) {
     });
   };
 
-
   // when user clicks Add button it triggers and via props it calls onAddNote which will
   // call the addNote function to add note to notes array
   const submitNote = (event) => {
@@ -32,7 +31,7 @@ function CreateArea(props) {
     event.preventDefault();
   };
 
-  // same call when user clicks enter button 
+  // same call when user clicks enter button
   const submitViaEnter = (e) => {
     props.onAddNoteEnter(e, note);
     if (e.key === "Enter") {
