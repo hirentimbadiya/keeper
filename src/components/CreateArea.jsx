@@ -54,29 +54,29 @@ function CreateArea(props) {
   return (
     <div>
       <form className="create-note">
-        {/* show title input only when user clicks means isExp becomes true */}
+        {/* when titel is clicked trigger the expand function 
+        when user writes something trigger handleChange and when user clicks Enter for that 
+        submitViaEnter */}
+        <input
+          onClick={expand}
+          onChange={handleChange}
+          name="title"
+          placeholder="Title Here"
+          value={note.title}
+          onKeyDown={submitViaEnter}
+        />
+        {/* show textArea input only when user clicks means isExp becomes true */}
         {isExp && (
-          <input
+          <textarea
             onChange={handleChange}
-            name="title"
-            placeholder="Title Here"
-            value={note.title}
+            name="content"
+            placeholder="Write a note here..."
+            // if isExp is true then expand the 3 rows else show only 1 row
+            rows={isExp ? 3 : 1}
+            value={note.content}
             onKeyDown={submitViaEnter}
           />
         )}
-        {/* when textArea is clicked trigger the expand function 
-        when user writes something trigger handleChange and when user clicks Enter for that 
-        submitViaEnter */}
-        <textarea
-          onClick={expand}
-          onChange={handleChange}
-          name="content"
-          placeholder="Write a note here..."
-          // if isExp is true then expand the 3 rows else show only 1 row
-          rows={isExp ? 3 : 1}
-          value={note.content}
-          onKeyDown={submitViaEnter}
-        />
 
         {/* imported icons from material-UI */}
         <Zoom in={isExp}>
