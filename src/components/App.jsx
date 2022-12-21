@@ -10,7 +10,7 @@ function App() {
 
   // function for adding the note to the notes Array 
   const addNote = (note) => {
-    if (note.title === "") {
+    if (note.title === "" && note.content === "") {
       return;
     }
     setNotes((prev) => {
