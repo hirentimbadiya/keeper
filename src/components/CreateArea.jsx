@@ -14,6 +14,7 @@ function CreateArea(props) {
   // when user types something it triggers and updates the value of title and content
   const handleChange = (event) => {
     const { name, value } = event.target;
+    // returning the previous object with changing the new property only changed property is changed
     setNote((prev) => {
       return {
         ...prev,
@@ -53,6 +54,7 @@ function CreateArea(props) {
   return (
     <div>
       <form className="create-note">
+        {/* show title input only when user clicks means isExp becomes true */}
         {isExp && (
           <input
             onChange={handleChange}
@@ -62,15 +64,21 @@ function CreateArea(props) {
             onKeyDown={submitViaEnter}
           />
         )}
+        {/* when textArea is clicked trigger the expand function 
+        when user writes something trigger handleChange and when user clicks Enter for that 
+        submitViaEnter */}
         <textarea
           onClick={expand}
           onChange={handleChange}
           name="content"
           placeholder="Write a note here..."
+          // if isExp is true then expand the 3 rows else show only 1 row
           rows={isExp ? 3 : 1}
           value={note.content}
           onKeyDown={submitViaEnter}
         />
+
+        {/* imported icons from material-UI */}
         <Zoom in={isExp}>
           <Fab onClick={submitNote}>
             <AddIcon />

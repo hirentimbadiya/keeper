@@ -7,12 +7,12 @@ import Note from "./Note";
 function App() {
   const [notes, setNotes] = useState([]);
 
-
-  // function for adding the note to the notes Array 
+  // function for adding the note to the notes Array
   const addNote = (note) => {
     if (note.title === "" && note.content === "") {
       return;
     }
+    // adding new note to previous note array , ...prev means previous note array
     setNotes((prev) => {
       return [...prev, note];
     });
