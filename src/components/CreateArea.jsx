@@ -71,8 +71,7 @@ function CreateArea(props) {
             onChange={handleChange}
             name="content"
             placeholder="Write a note here..."
-            // if isExp is true then expand the 3 rows else show only 1 row
-            rows={isExp ? 3 : 1}
+            rows={3}
             value={note.content}
             onKeyDown={submitViaEnter}
           />
